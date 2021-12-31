@@ -111,11 +111,26 @@ const translatedJSON = await generateLocalizableStrings(options);
 ### Code Example - all features
 
 ```jsx
+// Configure
+const fs = require("fs");
+const iosTranslator = require("ios_translator");
+
+const jsonData = fs.readFileSync(
+  "./your_google_service_account_credential.json"
+);
+const credential = JSON.parse(jsonData);
+
+iosTranslator.configure({
+  googleApiCredential: credential,
+  googleApiProjectId: credential.project_id,
+  log: false,
+});
+
 // returns 'bonjour'
-const result = await translate("hello", { from: "en", to: "fr" });
+const result = await iosTranslator.translate("hello", { from: "en", to: "fr" });
 
 // returns objects (available languages for translation), [{ code: 'tk', name: 'Turkmen' }, { code: 'uk', name: 'Ukrainian' },]
-const result = await listAvailableLanguages();
+const result = await iosTranslator.listAvailableLanguages();
 
 // returns objects and generate `localizable.strings`
 // Object will look like this
@@ -133,5 +148,5 @@ const options = {
   from: "en",
   to: ["fr", "ko"],
 };
-const translatedJSON = await generateLocalizableStrings(options);
+const translatedJSON = await iosTranslator.generateLocalizableStrings(options);
 ```
