@@ -1,3 +1,7 @@
+![demonstration1.png](./assets/demonstration1.png)
+
+![demonstration2.png](./assets/demonstration2.png)
+
 ### Install
 
 ```bash
@@ -92,9 +96,3 @@ const options = {
 };
 const translatedJSON = await generateLocalizableStrings(options);
 ```
-
-- Output
-
-![demonstration1.png](./demonstration1.png)
-
-![demonstration2.png](./demonstration1.png)
