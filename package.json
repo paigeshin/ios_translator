@@ -1,6 +1,6 @@
 {
   "name": "ios_translator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "iOS translator. Create localizable.strings",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,14 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/translate": "^6.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paigeshin/ios_translator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paigeshin/ios_translator/issues"
+  },
+  "homepage": "https://github.com/paigeshin/ios_translator#readme"
 }

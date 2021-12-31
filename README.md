@@ -30,34 +30,6 @@
   - generate localizable.strings for various languages
   - returns json objects list for cutomization
 
-### Code Example
-
-```jsx
-// returns 'bonjour'
-const result = await translate("hello", { from: "en", to: "fr" });
-
-// returns objects (available languages for translation), [{ code: 'tk', name: 'Turkmen' }, { code: 'uk', name: 'Ukrainian' },]
-const result = await fetchAvailableLanguages();
-
-// returns objects and generate `localizable.strings`
-// Object will look like this
-/*
-    {
-        "ko": {
-            "key": "hello",
-            "value": "안녕하세요"
-        }
-    }
-*/
-const options = {
-  input: "./ingredients/localizable.strings",
-  output: "./data/",
-  from: "en",
-  to: ["fr", "ko"],
-};
-const translatedJSON = await generateLocalizableStrings(options);
-```
-
 ### Configure
 
 1. Create your google account
@@ -93,6 +65,34 @@ const options = {
   output: "./data/",
   from: "en",
   to: ["de", "fr"],
+};
+const translatedJSON = await generateLocalizableStrings(options);
+```
+
+### Code Example
+
+```jsx
+// returns 'bonjour'
+const result = await translate("hello", { from: "en", to: "fr" });
+
+// returns objects (available languages for translation), [{ code: 'tk', name: 'Turkmen' }, { code: 'uk', name: 'Ukrainian' },]
+const result = await fetchAvailableLanguages();
+
+// returns objects and generate `localizable.strings`
+// Object will look like this
+/*
+    {
+        "ko": {
+            "key": "hello",
+            "value": "안녕하세요"
+        }
+    }
+*/
+const options = {
+  input: "./ingredients/localizable.strings",
+  output: "./data/",
+  from: "en",
+  to: ["fr", "ko"],
 };
 const translatedJSON = await generateLocalizableStrings(options);
 ```
