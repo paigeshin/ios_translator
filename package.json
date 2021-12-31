@@ -1,6 +1,6 @@
 {
   "name": "ios_translator",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "iOS translator. Create localizable.strings",
   "main": "index.js",
   "scripts": {
