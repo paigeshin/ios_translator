@@ -1,0 +1,19 @@
+{
+  "name": "ios_translator",
+  "version": "1.0.0",
+  "description": "iOS translator. Create localizable.strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ios",
+    "traslator",
+    "google api"
+  ],
+  "author": "paige shin",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/translate": "^6.1.0"
+  }
+}
