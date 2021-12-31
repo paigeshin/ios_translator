@@ -108,7 +108,10 @@ const generateLocalizableStrings = async (options) => {
         .replace(/[&\/\\#,+()$~%.'":*?<>{}]«»“”/g, "")
         .trim();
       text += `${key}="${refinedText}";\n`;
-      json[to[i]].push({ key: key, value: traslatedText.replace(/\\"/g, '"') });
+      json[to[i]].push({
+        key: key.replace(/\\"/g, '"'),
+        value: traslatedText.replace(/\\"/g, '"'),
+      });
     }
     const dir = `${output}/${to[i]}`;
     if (!fs.existsSync(dir)) {
