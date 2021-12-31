@@ -110,45 +110,15 @@ const generateLocalizableStrings = async (options) => {
       text += `${key}="${refinedText}";\n`;
       json[to[i]].push({ key: key, value: refinedText });
     }
-    const dir = `${output}`;
+    const dir = `${output}/${to[i]}`;
     if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
+      fs.mkdirSync(dir, { recursive: true });
     }
-    const subdir = `${dir}/${to[i]}/`;
-    if (!fs.existsSync(subdir)) {
-      fs.mkdirSync(subdir);
-    }
-    fs.writeFileSync(`${subdir}/localizable.strings`, text);
+    fs.writeFileSync(`${dir}/localizable.strings`, text);
   }
 
   return json;
 };
-
-// async function main() {
-//   const jsonData = fs.readFileSync("./abc.json");
-//   const credential = JSON.parse(jsonData);
-//   configure({
-//     googleApiCredential: credential,
-//     googleApiProjectId: credential.project_id,
-//     log: true,
-//   });
-
-// const result = await translate("hello", { from: "en", to: "fr" });
-// console.log(result);
-// return "bonjour"
-
-// const results = await listAvailableLanguages();
-// console.log(results);
-
-// const translatedJSON = await generateLocalizableStrings({
-//   input: "./ingredients/localizable.strings",
-//   output: "./data/",
-//   from: "en",
-//   to: ["fr", "de"],
-// });
-// }
-
-// main();
 
 module.exports = {
   configure,
