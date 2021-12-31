@@ -30,6 +30,39 @@
   - generate localizable.strings for various languages
   - returns json objects list for cutomization
 
+  ### Usage
+
+```jsx
+const fs = require("fs");
+const iosTranslator = require("ios_translator");
+
+const jsonData = fs.readFileSync(
+  "./your_google_service_account_credential.json"
+);
+const credential = JSON.parse(jsonData);
+
+iosTranslator.configure({
+  googleApiCredential: credential,
+  googleApiProjectId: credential.project_id,
+  log: false,
+});
+
+const options = {
+  input: "./ingredients/localizable.strings",
+  output: "./data/",
+  from: "en",
+  to: ["de", "fr"],
+};
+
+async function main() {
+  const translatedJSON = await iosTranslator.generateLocalizableStrings(
+    options
+  );
+}
+
+main();
+```
+
 ### Configure
 
 1. Create your google account
@@ -52,11 +85,17 @@ configure({
 ### generateLocalizableStrings
 
 - Options
+
   - input, where your original file is
+
   - output, where your output files will be
+
   - from, indicate your original language
+
     example) "hello world" is english
+
   - to, provide your target languages
+
     example) if you provide these languages, ["de", "fr"], your localizable.strings will be translated into german and french
 
 ```jsx
@@ -69,7 +108,7 @@ const options = {
 const translatedJSON = await generateLocalizableStrings(options);
 ```
 
-### Code Example
+### Code Example - all features
 
 ```jsx
 // returns 'bonjour'
