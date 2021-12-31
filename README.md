@@ -48,8 +48,8 @@ iosTranslator.configure({
 });
 
 const options = {
-  input: "./ingredients/localizable.strings",
-  output: "./data/",
+  input: "./path/to/localizable.strings",
+  output: "./path/to/yourdirectory",
   from: "en",
   to: ["de", "fr"],
 };
@@ -90,15 +90,15 @@ iosTranslator.configure({
 
 - Options
 
-  - input, where your original file is
+  - input => where your original file is
 
-  - output, where your output files will be
+  - output => where your output files will be
 
-  - from, indicate your original language
+  - from => indicate your original language
 
     example) "hello world" is english
 
-  - to, provide your target languages
+  - to => provide your target languages
 
     example) if you provide these languages, ["de", "fr"], your localizable.strings will be translated into german and french
 
@@ -118,8 +118,8 @@ iosTranslator.configure({
 });
 
 const options = {
-  input: "./ingredients/localizable.strings",
-  output: "./data/",
+  input: "./path/to/localizable.strings",
+  output: "./path/to/yourdirectory",
   from: "en",
   to: ["de", "fr"],
 };
@@ -161,10 +161,10 @@ const result = await iosTranslator.listAvailableLanguages();
     }
 */
 const options = {
-  input: "./ingredients/localizable.strings",
-  output: "./data/",
+  input: "./path/to/localizable.strings",
+  output: "./path/to/yourdirectory",
   from: "en",
-  to: ["fr", "ko"],
+  to: ["de", "fr"],
 };
 const translatedJSON = await iosTranslator.generateLocalizableStrings(options);
 ```
