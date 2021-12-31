@@ -1,6 +1,6 @@
-![demonstration1.png](./assets/demonstration1.png)
+![demonstration1.png](./demonstration1.png)
 
-![demonstration2.png](./assets/demonstration2.png)
+![demonstration2.png](./demonstration2.png)
 
 ### Install
 
