@@ -108,7 +108,7 @@ const generateLocalizableStrings = async (options) => {
       const refinedText = traslatedText
         .replace(/[&\/\\#,+()$~%.'":*?<>{}]«»“”/g, "")
         .trim();
-      text += `${key}:"${refinedText}";\n`;
+      text += `${key}="${refinedText}";\n`;
       json[to[i]].push({ key: key, value: refinedText });
     }
     const dir = `${output}`;
