@@ -30,6 +30,12 @@
   - generate localizable.strings for various languages
   - returns json objects list for cutomization
 
+### Prepare
+
+- localizable.strings must be provided as input
+
+![demo.png](./demo.png)
+
 ### Usage
 
 ```jsx
