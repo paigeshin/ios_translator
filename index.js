@@ -1,7 +1,7 @@
 /*
 Features 
 translateText => translate one text
-fetchAvailableLanguages => fetch all available languages
+listAvailableLanguages => fetch all available languages
 generateLocalizableStrings => translate entire strings.localizable
 */
 
@@ -28,7 +28,6 @@ function configure(configObj) {
     credentials: config.googleApiCredential,
     projectId: config.googleApiProjectId,
   });
-  console.log(`configure google api... ${JSON.stringify(config)}`);
 }
 
 function validate() {
@@ -153,6 +152,7 @@ const generateLocalizableStrings = async (options) => {
 
 module.exports = {
   configure,
+  translate,
   listAvailableLanguages,
   generateLocalizableStrings,
 };

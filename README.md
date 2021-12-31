@@ -20,7 +20,7 @@
 
   - translate single word or phrase or sentence
 
-- fecthAvailableLanguages
+- listAvailableLanguages
 
   - fetch all available language lists for translation
   - returns json objects list for customization
@@ -115,7 +115,7 @@ const translatedJSON = await generateLocalizableStrings(options);
 const result = await translate("hello", { from: "en", to: "fr" });
 
 // returns objects (available languages for translation), [{ code: 'tk', name: 'Turkmen' }, { code: 'uk', name: 'Ukrainian' },]
-const result = await fetchAvailableLanguages();
+const result = await listAvailableLanguages();
 
 // returns objects and generate `localizable.strings`
 // Object will look like this
