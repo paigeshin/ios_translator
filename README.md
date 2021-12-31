@@ -71,11 +71,15 @@ main();
 4. Get json credential
 
 ```jsx
+const fs = require("fs");
+const iosTranslator = require("ios_translator");
+
 const jsonData = fs.readFileSync(
   "./your_google_service_account_credential.json"
 );
 const credential = JSON.parse(jsonData);
-configure({
+
+iosTranslator.configure({
   googleApiCredential: credential,
   googleApiProjectId: credential.project_id,
   log: false,
@@ -99,13 +103,27 @@ configure({
     example) if you provide these languages, ["de", "fr"], your localizable.strings will be translated into german and french
 
 ```jsx
+const fs = require("fs");
+const iosTranslator = require("ios_translator");
+
+const jsonData = fs.readFileSync(
+  "./your_google_service_account_credential.json"
+);
+const credential = JSON.parse(jsonData);
+
+iosTranslator.configure({
+  googleApiCredential: credential,
+  googleApiProjectId: credential.project_id,
+  log: false,
+});
+
 const options = {
   input: "./ingredients/localizable.strings",
   output: "./data/",
   from: "en",
   to: ["de", "fr"],
 };
-const translatedJSON = await generateLocalizableStrings(options);
+const translatedJSON = await iosTranslator.generateLocalizableStrings(options);
 ```
 
 ### Code Example - all features
