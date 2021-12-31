@@ -30,7 +30,7 @@
   - generate localizable.strings for various languages
   - returns json objects list for cutomization
 
-  ### Usage
+### Usage
 
 ```jsx
 const fs = require("fs");
