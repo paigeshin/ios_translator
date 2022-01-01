@@ -5,7 +5,7 @@
 ### Install
 
 ```bash
-    npm install ios-translator
+    npm install ios_translator
 ```
 
 ### Description
